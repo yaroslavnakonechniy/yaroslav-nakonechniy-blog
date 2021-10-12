@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Blog\Framework\Http;
 
-use Blog\Cms\Router;
-
 class RequestDispatcher
 {
     /**
@@ -13,8 +11,19 @@ class RequestDispatcher
      */
     private array $routers;
 
+    private \Blog\Framework\Http\Request $request;
+
+    private \DI\Container $container;
+
+    /**
+     * @param array $routers
+     * @param Request $request
+     * @param \DI\Container $container
+     */
     public function __construct(
-        array $routers
+        array $routers,
+        \Blog\Framework\Http\Request $request,
+        \DI\Container $container
     ) {
         foreach ($routers as $router) {
             if (!($router instanceof RouterInterface)) {
@@ -23,15 +32,17 @@ class RequestDispatcher
         }
 
         $this->routers = $routers;
+        $this->request = $request;
+        $this->container = $container;
     }
 
     public function dispatcher()
     {
-        $requestUri = trim($_SERVER['REQUEST_URI'], '/');
+        $requestUri = $this->request->getRequestUrl();
 
         foreach ($this->routers as $router) {
             if ($controllerClass = $router->match($requestUri)) {
-                $controller = new $controllerClass;
+                $controller = $this->container->get($controllerClass);
 
                 if (!($controller instanceof ControllerInterface)) {
                     throw new \InvalidArgumentException(
