@@ -10,16 +10,15 @@
             <span>$33.33</span>
             <button type="button">Add To Cart</button>
         </div>
-        <?php foreach (blogGetNewPosts() as $blog) : ?>
+        <?php foreach (blogGetNewPosts() as $post) : ?>
             <div class="post">
-                <a href="/<?= $blog['url'] ?>" title="<?= $blog['name'] ?>">
-                    <img src="/product-placeholder.jpeg" alt="<?= $blog['name'] ?>" width="200"/>
+                <a href="/<?= $post['url'] ?>" title="<?= $post['name'] ?>">
+                    <img src="/product-placeholder.jpeg" alt="<?= $post['name'] ?>" width="200"/>
                 </a>
-                <p><a href="/<?= $blog['url'] ?>" title="<?= $blog['name'] ?>"><?= $blog['name'] ?></a></p>
-                <p>By <span><?= $blog['author']?></span> </p>
-                <p><?= $blog['description'] ?></p>
-                <p><?= $blog['author'] ?></p>
-                <p> <span>data: <?= $blog['date']?></span></p>
+                <p><a href="/<?= $post['url'] ?>" title="<?= $post['name'] ?>"><?= $post['name'] ?></a></p>
+                <p><?= $post['description'] ?></p>
+                <p><?= $post['author'] ?></p>
+                <p> <span>data: <?= $post['date']?></span></p>
                 <a href="/contact-us"><button type="button">Comment</button></a>
             </div>
         <?php endforeach; ?>

@@ -1,16 +1,15 @@
 <section title="Products">
     <h1><?= $data['name'] ?></h1>
     <div class="product-list">
-        <?php foreach (catalogGetCategoryBlog($data['category_id']) as $blog) : ?>
+        <?php foreach (blogGetCategoryPost($data['category_id']) as $post) : ?>
             <div class="product">
-                <a href="/<?= $blog['url'] ?>" title="<?= $blog['name'] ?>">
-                    <img src="/product-placeholder.png" alt="<?= $blog['name'] ?>" width="200"/>
+                <a href="/<?= $post['url'] ?>" title="<?= $post['name'] ?>">
+                    <img src="/product-placeholder.png" alt="<?= $post['name'] ?>" width="200"/>
                 </a>
-                <a href="/<?= $blog['url'] ?>" title="<?= $blog['name'] ?>"><?= $blog['name'] ?></a>
-                <p><?= $blog['description'] ?></p>
-                <p>By <span><?= $blog['author']?></span> </p>
-                <span>data: <?= $blog['data'] ?></span>
-                <button type="button">Add To Cart</button>
+                <a href="/<?= $post['url'] ?>" title="<?= $post['name'] ?>"><?= $post['name'] ?></a>
+                <p><?= $post['description'] ?></p>
+                <p>By <span><?= $post['author']?></span> </p>
+                <span>data: <?= $post['date'] ?></span>
             </div>
         <?php endforeach; ?>
     </div>

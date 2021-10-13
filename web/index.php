@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 require_once '../src/data.php';
+
 $requestUri = trim($_SERVER['REQUEST_URI'], '/');
 
 switch ($requestUri) {
@@ -13,13 +14,13 @@ switch ($requestUri) {
         $page = 'contact-us.php';
         break;
     default:
-        if ($data = catalogGetCategoryByUrl($requestUri)) {
+        if ($data = blogGetBlogByUrl($requestUri)) {
             $page = 'category.php';
             break;
         }
 
-        if ($data = catalogGetBlogByUrl($requestUri)) {
-            $page = 'blog.php';
+        if ($data = blogGetPostByUrl($requestUri)) {
+            $page = 'post.php';
             break;
         }
 
