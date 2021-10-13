@@ -10,21 +10,17 @@
             <span>$33.33</span>
             <button type="button">Add To Cart</button>
         </div>
-        <div class="product">
-            <a href="/product-2-url" title="Product 2">
-                <img src="/product-placeholder.png" alt="Product 2" width="200"/>
-            </a>
-            <a href="/product-2-url" title="Product 2">Product 2</a>
-            <span>$66.66</span>
-            <button type="button">Add To Cart</button>
-        </div>
-        <div class="product">
-            <a href="/product-3-url" title="Product 3">
-                <img src="/product-placeholder.png" alt="Product 3" width="200"/>
-            </a>
-            <a href="/product-3-url" title="Product 3">Product 3</a>
-            <span>$99.99</span>
-            <button type="button">Add To Cart</button>
-        </div>
+        <?php foreach (blogGetNewPosts() as $blog) : ?>
+            <div class="post">
+                <a href="/<?= $blog['url'] ?>" title="<?= $blog['name'] ?>">
+                    <img src="/product-placeholder.jpeg" alt="<?= $blog['name'] ?>" width="200"/>
+                </a>
+                <p><a href="/<?= $blog['url'] ?>" title="<?= $blog['name'] ?>"><?= $blog['name'] ?></a></p>
+                <p>By <span><?= $blog['author']?></span> </p>
+                <p><?= $blog['description'] ?></p>
+                <p> <span>data: <?= $blog['date']?></span></p>
+                <a href="/contact-us"><button type="button">Comment</button></a>
+            </div>
+        <?php endforeach; ?>
     </div>
 </section>

@@ -75,28 +75,30 @@ function catalogGetBlog(): array
     ];
 }
 
-////sorting
-//
-//        function my_sort($key){
-//
-//            return function ($a, $b) use ($key) {
-//
-//                return $a[$key] <=> $b[$key];
-//
-//            };
-//        }
-//
-//        function sortCatalogGetBlog(): array
-//        {
-//            $array = catalogGetBlog();
-//
-//            $array_sort = usort($array,my_sort('data'));
-//
-//            return $array_sort;
-//        }
+function blogGetNewPosts(): array
+{
+    $posts = catalogGetBlog();
+    $key = [];
+    $sortArray = [];
+    $time = time();
+    $number = 0;
 
-/////
+    foreach ($posts as $post) {
+        $keyPost = $time - strtotime($post['data']);
+        $key[$keyPost] = $post;
+    }
 
+    ksort($key);
+
+    foreach ($key as $post) {
+        if ($number < 3) {
+            $sortArray [] = $post;
+        } else {
+            break;
+        }
+    }
+    return $sortArray;
+}
 
 function catalogGetCategoryBlog(int $categoryId): array
 {
@@ -143,3 +145,4 @@ function catalogGetBlogByUrl(string $url): ?array
 
     return array_pop($data);
 }
+
