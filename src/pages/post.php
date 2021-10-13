@@ -1,6 +1,7 @@
 <div class="product-page">
-    <img src="/product-placeholder.png" alt="<?= $data['name'] ?>" width="300"/>
+    <img src="/web/product-placeholder.png" alt="<?= $data['name'] ?>" width="300"/>
     <h1><?= $data['name'] ?></h1>
     <p><?= $data['description'] ?></p>
+    <p><?= $data['author'] ?></p>
     <span>data: <?= $data['date'] ?></span>
 </div>

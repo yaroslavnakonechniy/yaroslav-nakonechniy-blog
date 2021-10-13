@@ -25,7 +25,7 @@ require_once '../src/data.php';
 <body>
 <header>
     <a href="/" title="{DV.Campus} PHP Framework">
-        <img src="logo.jpg" alt="{DV.Campus} Logo" width="200"/>
+        <img src="/web/logo.jpg" alt="{DV.Campus} Logo" width="200"/>
     </a>
     <nav>
         <ul>
