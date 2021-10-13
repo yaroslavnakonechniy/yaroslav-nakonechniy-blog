@@ -18,6 +18,7 @@
                 <p><a href="/<?= $blog['url'] ?>" title="<?= $blog['name'] ?>"><?= $blog['name'] ?></a></p>
                 <p>By <span><?= $blog['author']?></span> </p>
                 <p><?= $blog['description'] ?></p>
+                <p><?= $blog['author'] ?></p>
                 <p> <span>data: <?= $blog['date']?></span></p>
                 <a href="/contact-us"><button type="button">Comment</button></a>
             </div>
