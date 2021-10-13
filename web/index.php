@@ -37,3 +37,4 @@ header('Content-Type: text/html; charset=utf-8');
 ob_start();
 require_once "../src/page.php";
 echo ob_get_clean();
+

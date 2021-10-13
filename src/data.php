@@ -35,6 +35,7 @@ function catalogGetBlog(): array
             'name'        => 'Football',
             'url'         => 'football',
             'description' => 'NFL Week 5 game picks, schedule guide, fantasy football tips, odds, injuries and more',
+            'author'      => 'Ivan Salabay',
             'data'       => '11-09-2021'
         ],
         2 => [
@@ -42,6 +43,7 @@ function catalogGetBlog(): array
             'name'        => 'Tenis',
             'url'         => 'tenis',
             'description' => 'Product 2 Description',
+            'author'      => 'Oleg Vinik',
             'data'       => '02-12-2021'
         ],
         3 => [
@@ -49,6 +51,7 @@ function catalogGetBlog(): array
             'name'        => 'Basketball',
             'url'         => 'basketball',
             'description' => 'Product 3 Description',
+            'author'      => 'Olga Rudko',
             'data'       => '04-08-2021'
         ],
         4 => [
@@ -56,6 +59,7 @@ function catalogGetBlog(): array
             'name'        => 'News for world',
             'url'         => 'news-for-world',
             'description' => 'sdfds dsfdsf sfdsf sdf',
+            'author'      => 'Mihail Vinik',
             'data'       => '01-09-2021'
         ],
         5 => [
@@ -63,6 +67,7 @@ function catalogGetBlog(): array
             'name'        => 'New game',
             'url'         => 'new-game',
             'description' => 'Product 5 Description',
+            'author'      => 'Taras Fedorchk',
             'data'       => '09-01-2021'
         ],
         6 => [
@@ -70,6 +75,7 @@ function catalogGetBlog(): array
             'name'        => 'Product 6',
             'url'         => 'product-6',
             'description' => 'Product 6 Description',
+            'author'      => 'Garik Jon',
             'data'       => '02-04-2022'
         ]
     ];
