@@ -4,7 +4,7 @@
         <?php foreach (blogGetCategoryPost($data['category_id']) as $post) : ?>
             <div class="product">
                 <a href="/<?= $post['url'] ?>" title="<?= $post['name'] ?>">
-                    <img src="/web/product-placeholder.png" alt="<?= $post['name'] ?>" width="200"/>
+                    <img src="/product-placeholder.png" alt="<?= $post['name'] ?>" width="200"/>
                 </a>
                 <a href="/<?= $post['url'] ?>" title="<?= $post['name'] ?>"><?= $post['name'] ?></a>
                 <p><?= $post['description'] ?></p>
