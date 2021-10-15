@@ -9,19 +9,19 @@ function blogGetCategory(): array
             'category_id' => 1,
             'name'        => 'Sport',
             'url'         => 'sport',
-            'posts'    => [1, 2, 3]
+            'posts'    => [1]
         ],
         2 => [
             'category_id' => 2,
             'name'        => 'TV',
             'url'         => 'tv',
-            'posts'    => [4, 3]
+            'posts'    => [3]
         ],
         3 => [
             'category_id' => 3,
             'name'        => 'Shoping',
             'url'         => 'shoping',
-            'posts'    => [5, 2, 6]
+            'posts'    => [2]
         ],
     ];
 }
@@ -33,49 +33,25 @@ function blogGetPost(): array
             'post_id'  => 1,
             'name'        => 'Football',
             'url'         => 'football',
-            'description' => 'NFL Week 5 game picks, schedule guide, fantasy football tips, odds, injuries and more',
+            'description' => 'NFL Week 5 game picks, ',
             'author'      => 'Ivan Salabay',
-            'date'       => '11-09-2021'
+            'date'       => '11.06.2021'
         ],
         2 => [
             'post_id'  => 2,
-            'name'        => 'Tenis',
+            'name'        => 'Nike',
             'url'         => 'tenis',
-            'description' => 'Product 2 Description',
+            'description' => 'Nike - it is good',
             'author'      => 'Oleg Vinik',
-            'date'       => '02-12-2021'
+            'date'       => '02.12.2021'
         ],
         3 => [
-            'post_id'  => 3,
-            'name'        => 'Basketball',
-            'url'         => 'basketball',
-            'description' => 'Product 3 Description',
-            'author'      => 'Olga Rudko',
-            'date'       => '04-08-2021'
-        ],
-        4 => [
             'post_id'  => 4,
             'name'        => 'News for world',
             'url'         => 'news-for-world',
             'description' => 'sdfds dsfdsf sfdsf sdf',
-            'author'      => 'Mihail Vinik',
-            'date'       => '01-09-2021'
-        ],
-        5 => [
-            'post_id'  => 5,
-            'name'        => 'New game',
-            'url'         => 'new-game',
-            'description' => 'Product 5 Description',
-            'author'      => 'Taras Fedorchk',
-            'date'       => '09-01-2021'
-        ],
-        6 => [
-            'post_id'  => 6,
-            'name'        => 'Product 6',
-            'url'         => 'product-6',
-            'description' => 'Product 6 Description',
-            'author'      => 'Garik Jon',
-            'date'       => '02-04-2022'
+            'author'      => 'Mihail Son',
+            'date'       => '01.02.2021'
         ]
     ];
 }
@@ -94,15 +70,9 @@ function blogGetNewPosts(): array
     }
 
     ksort($key);
+    krsort($key);
 
-    foreach ($key as $post) {
-        if ($number < 3) {
-            $sortArray [] = $post;
-        } else {
-            break;
-        }
-    }
-    return $sortArray;
+    return $key;
 }
 
 function blogGetCategoryPost(int $categoryId): array

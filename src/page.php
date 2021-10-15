@@ -5,7 +5,7 @@ require_once '../src/data.php';
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{DV.Campus} PHP Framework</title>
+    <title>yaroslav-nakonechniy-blog</title>
     <style>
         header,
         main,
@@ -13,19 +13,19 @@ require_once '../src/data.php';
             border: 1px dashed black;
         }
 
-        .product-list {
+        .post-list {
             display: flex;
         }
 
-        .product-list .product {
+        .post-list .product {
             max-width: 30%;
         }
     </style>
 </head>
 <body>
 <header>
-    <a href="/" title="{DV.Campus} PHP Framework">
-        <img src="/logo.jpg" alt="{DV.Campus} Logo" width="200"/>
+    <a href="/" title="yaroslav-nakonechniy-blog">
+        <img src="/logo.jpg" alt="Blog Logo" width="200"/>
     </a>
     <nav>
         <ul>

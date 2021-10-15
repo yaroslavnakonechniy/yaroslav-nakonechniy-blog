@@ -1,10 +1,10 @@
-<section title="Products">
+<section title="Post">
     <h1><?= $data['name'] ?></h1>
-    <div class="product-list">
+    <div class="post-list">
         <?php foreach (blogGetCategoryPost($data['category_id']) as $post) : ?>
-            <div class="product">
+            <div class="post">
                 <a href="/<?= $post['url'] ?>" title="<?= $post['name'] ?>">
-                    <img src="/product-placeholder.png" alt="<?= $post['name'] ?>" width="200"/>
+                    <img src="/post-placeholder.png" alt="<?= $post['name'] ?>" width="200"/>
                 </a>
                 <a href="/<?= $post['url'] ?>" title="<?= $post['name'] ?>"><?= $post['name'] ?></a>
                 <p><?= $post['description'] ?></p>
